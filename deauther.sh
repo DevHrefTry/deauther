@@ -50,7 +50,7 @@ do
         cat "$infofile"-01.kismet.netxml | grep BSSID | cut -d '<' -f2 |  cut -d '>' -f2 > $wififile
         cat $wififile | sort -u > temp
         num_clients=`cat $wififile | wc -l`
-        wifis=`cat $wififile | grep -v "5C:6A:80:59:CA:F4" | grep -v "10:7B:EF:D9:3E:AA" `
+        wifis=`cat $wififile | grep -v "MAC" | grep -v "MAC2" `
 	sudo rm $infofile*;
         echo "wifis: "
         echo "$wifis"
